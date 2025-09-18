@@ -3,9 +3,11 @@ import "./Flashcard.css";
 
 function Flashcard({ question, answer}) {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [counter, setCounter] = useState(0);
 
     function handleFlip() {
         setIsFlipped(!isFlipped);
+        setCounter(counter + 1)
     }
 
     return (
@@ -13,6 +15,7 @@ function Flashcard({ question, answer}) {
 
             {isFlipped ? <p>{answer}</p> : <p>{question}</p>}
             <button onClick={handleFlip}>Guzik</button>
+            <p>karta odwórcona {counter} razy</p>
          </div>
 
          
